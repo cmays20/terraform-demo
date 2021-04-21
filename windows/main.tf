@@ -94,6 +94,14 @@ resource "aws_security_group" "windows_iis_sg" {
 
   # WinRM access from anywhere
   ingress {
+    from_port   = 5985
+    to_port     = 5986
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  # HTTP access from anywhere
+  ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
