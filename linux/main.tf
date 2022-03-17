@@ -9,6 +9,7 @@ terraform {
 
 provider "aws" {
   region = "us-east-2"
+  profile = "demo"
 }
 
 # Default security group to access the instances via WinRM over HTTP and HTTPS
